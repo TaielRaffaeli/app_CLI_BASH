@@ -4,10 +4,19 @@ sleep 1
 echo "statsWords es un indicador estadístico de longitud de palabras"
 sleep 1
 echo "Debe ingresar el nombre del archivo de texto que quiere analizar o (Q / q) para volver al menu"
+while :
+do
 read ARCHI
-if [ -e $ARCHI.txt ]
+if [[ $ARCHI == "Q" || $ARCHI == "q" ]]
 then
+echo "Regresando al menu principal..."
+sleep 1
+echo "Usted a vuelto al menu principal"
+sleep 1
+break
 
+elif [ -e $ARCHI.txt ]
+then
 largo=0
 for palabra in $(<$ARCHI.txt)
 do
@@ -18,7 +27,9 @@ do
         palabra_mas_larga=$palabra
     fi
 done
+sleep 1
 echo "La palabra mas larga del texto es $palabra_mas_larga y contiene $largo caracteres"
+
 set `cat $ARCHI.txt`
 palabra_mas_corta=$1
 Caracteres=${#palabra_mas_corta}
@@ -34,12 +45,28 @@ do
         palabra_mas_corta=$palabra_mas_corta
     fi
 done
+sleep 1
 echo "La palabra mas corta del texto es $palabra_mas_corta y contiene $Caracteres caracteres"
+
 cantC=$(wc -m < $ARCHI.txt)
 cantP=$(wc -w < $ARCHI.txt)
-echo "caracteres" $cantC && echo "palabras" $cantP
-echo "El promedio de longitud de palabras es $(( $cantC / $cantP ))"
+sleep 1
+echo "Su texto contiene $cantC caracteres y $cantP palabras en total, con un promedio de longitud de palabra por $(( $cantC / $cantP )) caracteres"
+sleep 1
+echo "desea seguir usando statsWords para analizar otro texto? si / no"
+read RESP
+case $RESP in
+[Ss] | [Ss][iI]) echo "Debe ingresar el nombre del archivo de texto que quiere analizar o (Q / q) para volver al menu"
+ continue ;;
+[Nn] | [Nn][oO]) echo "Regresando al menu principal..."
+sleep 1
+echo "Usted a vuelto al menu principal"
+sleep 1
+break
+esac
 else
-echo "noexist"
+echo "Debe ingresar el nombre del archivo de texto que quiere analizar o (Q / q) para volver al menu"
 fi
+done
+
 
