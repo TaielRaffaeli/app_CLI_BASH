@@ -27,7 +27,8 @@ do
         palabra_mas_larga=$palabra
     fi
 done
-sleep 1
+echo "Analizando espere por favor..."
+sleep 2
 echo "La palabra mas larga del texto es $palabra_mas_larga y contiene $largo caracteres"
 
 set `cat $ARCHI.txt`
@@ -45,13 +46,12 @@ do
         palabra_mas_corta=$palabra_mas_corta
     fi
 done
-sleep 1
 echo "La palabra mas corta del texto es $palabra_mas_corta y contiene $Caracteres caracteres"
 
 cantC=$(wc -m < $ARCHI.txt)
 cantP=$(wc -w < $ARCHI.txt)
-sleep 1
 echo "Su texto contiene $cantC caracteres y $cantP palabras en total, con un promedio de longitud de palabra por $(( $cantC / $cantP )) caracteres"
+
 sleep 1
 echo "desea seguir usando statsWords para analizar otro texto? si / no"
 read RESP
