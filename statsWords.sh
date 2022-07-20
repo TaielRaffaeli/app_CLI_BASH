@@ -46,14 +46,16 @@ do
         palabra_mas_corta=$palabra_mas_corta
     fi
 done
+sleep 0.2
 echo "La palabra mas corta del texto es $palabra_mas_corta y contiene $Caracteres caracteres"
 
 cantC=$(wc -m < $ARCHI.txt)
 cantP=$(wc -w < $ARCHI.txt)
+sleep 0.2
 echo "Su texto contiene $cantC caracteres y $cantP palabras en total, con un promedio de longitud de palabra por $(( $cantC / $cantP )) caracteres"
 
 sleep 1
-echo "desea seguir usando statsWords para analizar otro texto? si / no"
+echo "Desea seguir usando statsWords para analizar otro texto? si / no"
 read RESP
 case $RESP in
 [Ss] | [Ss][iI]) echo "Debe ingresar el nombre del archivo de texto que quiere analizar o (Q / q) para volver al menu"
