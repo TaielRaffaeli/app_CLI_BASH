@@ -29,8 +29,7 @@ do
 done
 echo "Analizando espere por favor..."
 sleep 2
-echo "La palabra mas larga del texto es $palabra_mas_larga y contiene $largo caracteres"
-
+echo "La palabra mas larga del texto es \"$palabra_mas_larga\" y contiene $largo caracteres"
 set `cat $ARCHI.txt`
 palabra_mas_corta=$1
 Caracteres=${#palabra_mas_corta}
@@ -46,12 +45,10 @@ do
         palabra_mas_corta=$palabra_mas_corta
     fi
 done
-sleep 0.2
-echo "La palabra mas corta del texto es $palabra_mas_corta y contiene $Caracteres caracteres"
+echo "La palabra mas corta del texto es \"$palabra_mas_corta\" y contiene $Caracteres caracteres"
 
 cantC=$(wc -m < $ARCHI.txt)
 cantP=$(wc -w < $ARCHI.txt)
-sleep 0.2
 echo "Su texto contiene $cantC caracteres y $cantP palabras en total, con un promedio de longitud de palabra por $(( $cantC / $cantP )) caracteres"
 
 sleep 1

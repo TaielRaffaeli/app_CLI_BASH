@@ -22,7 +22,7 @@ echo "Analizando espere por favor..."
 sleep 2
 echo "Hay $CANT lineas en blanco en el texto analizado"
 sleep 1
-echo "Desea seguir usando findNames para buscar nombres en otro texto? si / no"
+echo "Desea seguir usando blankLinesCounter para analizar otro texto? si / no"
 read RESP
 case $RESP in
 [Ss] | [Ss][iI]) echo "Debe ingresar el nombre del archivo de texto que quiere analizar o (Q / q) para volver al menu"

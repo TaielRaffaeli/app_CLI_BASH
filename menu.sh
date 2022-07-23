@@ -5,8 +5,6 @@ sleep 1
 echo "Por favor, elija una de las siguientes opciones (colocando el numero correspondiente) para analizar su texto"
 sleep 1
 echo "[-OPCIONES-]: 1)statsWords.sh - 2)statsUsageWords.sh - 3)findNames.sh - 4)statsSentences.sh - 5)blankLinesCounter.sh - (para salir del menu escriba Q / q)"
-sleep 1
-echo "[-ELEGIR-]:"
 while :
 do
 read VAR1
