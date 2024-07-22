@@ -1,5 +1,5 @@
 # TP_Entorno
-## AUTOR: Taiel Raffaelli, estudiante de la carrera de tecnicatura de programación en IA en la Facultad de Ciencias Exactas, Ingeniería y Agrimensura.
+## AUTOR: Taiel Raffaeli, estudiante de la carrera de tecnicatura de programación en IA en la Facultad de Ciencias Exactas, Ingeniería y Agrimensura.
 ## Trabajo práctico de entorno de programación
 ### INTRO
 Se realizó una app CLI. Esta cuenta con un menú general interactivo con el usuario que permite seleccionar un conjunto de opciones de mini-apps de análisis de texto. Cada mini-app analiza un archivo de texto y devuelve ciertos valores.
